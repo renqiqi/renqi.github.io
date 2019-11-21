@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="RenQi">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://renqi.github.io/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="http://renqi.github.io/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="安装Hugo" />
+    <meta property="og:title" content="安装Hugo" />
+    <meta property="twitter:title" content="安装Hugo" />
+    
+
+    
+    <meta name="description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="任琪, renqi, RenQi, 任琪的日志, 任琪的博客, Renqi Blog, 博客, 个人网站, 互联网">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>安装Hugo-任琪 | RenQi</title>
+
+    <link rel="canonical" href="/post/install_hugo/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">RenQi</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://img.zhaohuabing.com/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                    </div>
+                    <h1>安装Hugo</h1>
+                    <h2 class="subheading">install Hugo</h2>
+                    <span class="meta">
+			Posted by 
+			
+			    任琪
+			 
+			on 
+			Sunday, May 12, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#what-is-hugo">What is Hugo</a></li>
+<li><a href="#install-hugo">Install Hugo</a>
+<ul>
+<li><a href="#quick-install">Quick Install</a>
+<ul>
+<li><a href="#binary-cross-platform">Binary (Cross-platform)</a></li>
+<li><a href="#homebrew-macos">Homebrew (macOS)</a></li>
+<li><a href="#chocolatey-windows">Chocolatey (Windows)</a></li>
+<li><a href="#scoop-windows">Scoop (Windows)</a></li>
+<li><a href="#source">Source</a>
+<ul>
+<li><a href="#prerequisite-tools">Prerequisite Tools</a></li>
+<li><a href="#fetch-from-github">Fetch from GitHub</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#linux">Linux</a>
+<ul>
+<li><a href="#snap-package">Snap Package</a></li>
+<li><a href="#debian-and-ubuntu">Debian and Ubuntu</a></li>
+<li><a href="#arch-linux">Arch Linux</a></li>
+<li><a href="#fedora-red-hat-and-centos">Fedora, Red Hat and CentOS</a></li>
+<li><a href="#solus">Solus</a></li>
+</ul></li>
+<li><a href="#windows">Windows</a>
+<ul>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#set-up-your-directories">Set up Your Directories</a></li>
+<li><a href="#technical-users">Technical Users</a></li>
+<li><a href="#less-technical-users">Less-technical Users</a>
+<ul>
+<li><a href="#for-windows-10-users">For Windows 10 Users:</a></li>
+<li><a href="#for-windows-7-and-8-x-users">For Windows 7 and 8.x users:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h1 id="what-is-hugo">What is Hugo</h1>
+
+<p>Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.</p>
+
+<p>Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors.</p>
+
+<p>Websites built with Hugo are extremely fast and secure. Hugo sites can be hosted anywhere, including Netlify, Heroku, GoDaddy, DreamHost, GitHub Pages, GitLab Pages, Surge, Aerobatic, Firebase, Google Cloud Storage, Amazon S3, Rackspace, Azure, and CloudFront and work well with CDNs. Hugo sites run without the need for a database or dependencies on expensive runtimes like Ruby, Python, or PHP.</p>
+
+<p>We think of Hugo as the ideal website creation tool with nearly instant build times, able to rebuild whenever a change is made.</p>
+
+<h1 id="install-hugo">Install Hugo</h1>
+
+<p>Install Hugo on macOS, Windows, Linux, OpenBSD, FreeBSD, and on any machine where the Go compiler tool chain can run.</p>
+
+<p>Hugo is written in Go with support for multiple platforms. The latest release can be found at Hugo Releases.
+Hugo currently provides pre-built binaries for the following:</p>
+
+<ul>
+<li>macOS (Darwin) for x64, i386, and ARM architectures</li>
+<li>Windows</li>
+<li>Linux</li>
+<li>OpenBSD</li>
+<li>FreeBSD</li>
+</ul>
+
+<p>Hugo may also be compiled from source wherever the Go toolchain can run; e.g., on other operating systems such as DragonFly BSD, OpenBSD, Plan 9, Solaris, and others. See <a href="https://golang.org/doc/install/source">https://golang.org/doc/install/source</a> for the full set of supported combinations of target operating systems and compilation architectures.</p>
+
+<h2 id="quick-install">Quick Install</h2>
+
+<h3 id="binary-cross-platform">Binary (Cross-platform)</h3>
+
+<p>Download the appropriate version for your platform from <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a>. Once downloaded, the binary can be run from anywhere. You don’t need to install it into a global location. This works well for shared hosts and other systems where you don’t have a privileged account.</p>
+
+<p>Ideally, you should install it somewhere in your PATH for easy use. /usr/local/bin is the most probable location.</p>
+
+<h3 id="homebrew-macos">Homebrew (macOS)</h3>
+
+<p>If you are on macOS and using <a href="https://brew.sh/">Homebrew</a>, you can install Hugo with the following one-liner:</p>
+
+<p>install-with-homebrew.sh</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>For more detailed explanations, read the installation guides that follow for installing on macOS and Windows.</p>
+
+<h3 id="chocolatey-windows">Chocolatey (Windows)</h3>
+
+<p>If you are on a Windows machine and use <a href="https://chocolatey.org/">Chocolatey</a> for package management, you can install Hugo with the following one-liner:</p>
+
+<p>install-with-chocolatey.ps1</p>
+
+<pre><code>hoco install hugo -confirm
+</code></pre>
+
+<h3 id="scoop-windows">Scoop (Windows)</h3>
+
+<p>If you are on a Windows machine and use <a href="https://scoop.sh/">Scoop</a> for package management, you can install Hugo with the following one-liner:</p>
+
+<pre><code>scoop install hugo
+</code></pre>
+
+<h3 id="source">Source</h3>
+
+<h4 id="prerequisite-tools">Prerequisite Tools</h4>
+
+<ul>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://github.com/golang/go">Go (at least Go 1.11)</a></li>
+</ul>
+
+<h4 id="fetch-from-github">Fetch from GitHub</h4>
+
+<p>Since Hugo 0.48, Hugo uses the Go Modules support built into Go 1.11 to build. The easiest way to get started is to clone Hugo in a directory outside of the GOPATH, as in the following example:</p>
+
+<p>from-gh.sh</p>
+
+<pre><code>mkdir $HOME/src
+cd $HOME/src
+git clone https://github.com/gohugoio/hugo.git
+cd hugo
+go install --tags extended
+</code></pre>
+
+<p>Remove &ndash;tags extended if you do not want/need Sass/SCSS support.</p>
+
+<p>If you are a Windows user, substitute the $HOME environment variable above with %USERPROFILE%.</p>
+
+<h2 id="linux">Linux</h2>
+
+<h3 id="snap-package">Snap Package</h3>
+
+<p>In any of the <a href="https://docs.snapcraft.io/installing-snapd">Linux distributions that support snaps</a>, you may install install the “extended” Sass/SCSS version with this command:</p>
+
+<pre><code>snap install hugo --channel=extended
+</code></pre>
+
+<p>To install the non-extended version without Sass/SCSS support:</p>
+
+<pre><code>snap install hugo
+</code></pre>
+
+<p>To switch between the two, use either snap refresh hugo &ndash;channel=extended or snap refresh hugo &ndash;channel=stable.</p>
+
+<p>Hugo-as-a-snap can write only inside the user’s $HOME directory—and gvfs-mounted directories owned by the user—because of Snaps’ confinement and security model. More information is also available in this related GitHub issue. Use sudo snap install hugo &ndash;classic to disable the default security model if you want hugo to be able to have write access in other paths besides the user’s $HOME directory.</p>
+
+<h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
+
+<p><a href="https://github.com/anthonyfok">@anthonyfok</a> and friends in the <a href="https://go-team.pages.debian.net/">Debian Go Packaging Team</a> maintains an official hugo <a href="https://packages.debian.org/search?keywords=hugo">Debian package</a> which is shared with <a href="https://packages.ubuntu.com/search?keywords=hugo">Ubuntu</a> and is installable via apt-get:</p>
+
+<pre><code>sudo apt-get install hugo
+</code></pre>
+
+<p>This installs the “extended” Sass/SCSS version.</p>
+
+<h3 id="arch-linux">Arch Linux</h3>
+
+<p>You can also install Hugo from the Arch Linux <a href="https://www.archlinux.org/packages/community/x86_64/hugo/">community</a> repository. Applies also to derivatives such as Manjaro.</p>
+
+<pre><code>sudo pacman -Syu hugo
+</code></pre>
+
+<h3 id="fedora-red-hat-and-centos">Fedora, Red Hat and CentOS</h3>
+
+<p>Fedora maintains an <a href="https://apps.fedoraproject.org/packages/hugo">official package for Hugo</a> which may be installed with:</p>
+
+<pre><code>sudo dnf install hugo
+</code></pre>
+
+<p>For the latest version, the Hugo package maintained by <a href="https://github.com/daftaupe">@daftaupe</a> at Fedora Copr is recommended:</p>
+
+<ul>
+<li><a href="https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/">https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/</a></li>
+</ul>
+
+<p>See the <a href="https://discourse.gohugo.io/t/solved-fedora-copr-repository-out-of-service/2491">related discussion in the Hugo forums</a>.</p>
+
+<h3 id="solus">Solus</h3>
+
+<p>Solus includes Hugo in its package repository, it may be installed with:</p>
+
+<pre><code>sudo eopkg install hugo
+</code></pre>
+
+<h2 id="windows">Windows</h2>
+
+<h3 id="assumptions">Assumptions</h3>
+
+<ol>
+<li>You will use C:\Hugo\Sites as the starting point for your new project.</li>
+<li>You will use C:\Hugo\bin to store executable files.</li>
+</ol>
+
+<h3 id="set-up-your-directories">Set up Your Directories</h3>
+
+<p>You’ll need a place to store the Hugo executable, your <a href="https://gohugo.io/content-management/">content</a>, and the generated Hugo website:</p>
+
+<ol>
+<li>Open Windows Explorer.</li>
+<li>Create a new folder: C:\Hugo, assuming you want Hugo on your C drive, although this can go anywhere</li>
+<li>Create a subfolder in the Hugo folder: C:\Hugo\bin</li>
+<li>Create another subfolder in Hugo: C:\Hugo\Sites</li>
+</ol>
+
+<h3 id="technical-users">Technical Users</h3>
+
+<ol>
+<li>Download the latest zipped Hugo executable from <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a>.</li>
+<li>Extract all contents to your ..\Hugo\bin folder.</li>
+<li>The hugo executable will be named as hugo_hugo-version_platform_arch.exe. Rename the executable to hugo.exe for ease of use.</li>
+<li>In PowerShell or your preferred CLI, add the hugo.exe executable to your PATH by navigating to C:\Hugo\bin (or the location of your hugo.exe file) and use the command set PATH=%PATH%;C:\Hugo\bin. If the hugo command does not work after a reboot, you may have to run the command prompt as administrator.</li>
+</ol>
+
+<h3 id="less-technical-users">Less-technical Users</h3>
+
+<ol>
+<li>Go to the <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a> page.</li>
+<li>The latest release is announced on top. Scroll to the bottom of the release announcement to see the downloads. They’re all ZIP files.</li>
+<li>Find the Windows files near the bottom (they’re in alphabetical order, so Windows is last) – download either the 32-bit or 64-bit file depending on whether you have 32-bit or 64-bit Windows. (If you don’t know, <a href="https://esupport.trendmicro.com/en-us/home/pages/technical-support/1038680.aspx">see here</a>.)</li>
+<li>Move the ZIP file into your C:\Hugo\bin folder.</li>
+<li>Double-click on the ZIP file and extract its contents. Be sure to extract the contents into the same C:\Hugo\bin folder – Windows will do this by default unless you tell it to extract somewhere else.</li>
+<li>You should now have three new files: The hugo executable (hugo.exe), LICENSE, and README.md.</li>
+</ol>
+
+<p>Now you need to add Hugo to your Windows PATH settings:</p>
+
+<h4 id="for-windows-10-users">For Windows 10 Users:</h4>
+
+<ul>
+<li>Right click on the Start button.</li>
+<li>Click on System.</li>
+<li>Click on Advanced System Settings on the left.</li>
+<li>Click on the Environment Variables… button on the bottom.</li>
+<li>In the User variables section, find the row that starts with PATH (PATH will be all caps).</li>
+<li>Double-click on PATH.</li>
+<li>Click the New… button.</li>
+<li>Type in the folder where hugo.exe was extracted, which is C:\Hugo\bin if you went by the instructions above. The PATH entry should be the folder where Hugo lives and not the binary. Press Enter when you’re done typing.</li>
+<li>Click OK at every window to exit.</li>
+</ul>
+
+<h4 id="for-windows-7-and-8-x-users">For Windows 7 and 8.x users:</h4>
+
+<p>Windows 7 and 8.1 do not include the easy path editor included in Windows 10, so non-technical users on those platforms are advised to install a free third-party path editor like <a href="http://eveditor.com/">Windows Environment Variables Editor</a> or <a href="https://archive.codeplex.com/?p=patheditor2">Path Editor</a>.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/quickstart_hugo/" data-toggle="tooltip" data-placement="top" title="快速启动Hugo">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/ren-qi-qi-65/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.weibo.com/3993719314/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/img/wechat_qrcode.jpg">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/renqiqi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; RenQi 2019
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite"></a> by <a href="https://github.com/renqiqi">renqi</a> 
+                   
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

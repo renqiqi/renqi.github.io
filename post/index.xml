@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on RenQi</title>
+    <link>http://renqi.github.io/post/</link>
+    <description>Recent content in Posts on RenQi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renqi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anaconda虚拟环境使用</title>
+      <link>http://renqi.github.io/post/anaconda/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://renqi.github.io/post/anaconda/</guid>
+      <description>Anaconda Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。 conda是一个开源的</description>
+    </item>
+    
+    <item>
+      <title>PCL&#43;VTK显示三维模型</title>
+      <link>http://renqi.github.io/post/pcl/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://renqi.github.io/post/pcl/</guid>
+      <description>PCL、VTK简介 PCL(Point Cloud Library)是一个独立的、大型的跨平台开源C++编程库，它建立在前人对点云研究的基础之上，能够处理二维、三维图像和</description>
+    </item>
+    
+    <item>
+      <title>快速启动Hugo</title>
+      <link>http://renqi.github.io/post/quickstart_hugo/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://renqi.github.io/post/quickstart_hugo/</guid>
+      <description>Quick Start Create a Hugo site using the beautiful Ananke theme.
+This quick start uses macOS in the examples. For instructions about how to install Hugo on other operating systems, see install.
+It is recommended to have Git installed to run this tutorial.
+Step 1: Install Hugo Homebrew, a package manager for macOS, can be installed from brew.sh. See install if you are running Windows etc.
+brew install hugo  To verify your new install:</description>
+    </item>
+    
+    <item>
+      <title>安装Hugo</title>
+      <link>http://renqi.github.io/post/install_hugo/</link>
+      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://renqi.github.io/post/install_hugo/</guid>
+      <description>What is Hugo Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
+Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors.</description>
+    </item>
+    
+  </channel>
+</rss>

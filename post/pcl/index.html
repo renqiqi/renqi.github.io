@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="RenQi">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://renqi.github.io/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="http://renqi.github.io/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="PCL&#43;VTK显示三维模型" />
+    <meta property="og:title" content="PCL&#43;VTK显示三维模型" />
+    <meta property="twitter:title" content="PCL&#43;VTK显示三维模型" />
+    
+
+    
+    <meta name="description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="任琪, renqi, RenQi, 任琪的日志, 任琪的博客, Renqi Blog, 博客, 个人网站, 互联网">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>PCL&#43;VTK显示三维模型-任琪 | RenQi</title>
+
+    <link rel="canonical" href="/post/pcl/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">RenQi</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://img.zhaohuabing.com/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/pcl" title="PCL">
+                            PCL
+                        </a>
+                        
+                    </div>
+                    <h1>PCL&#43;VTK显示三维模型</h1>
+                    <h2 class="subheading">PCL&#43;VTK Display 3D model</h2>
+                    <span class="meta">
+			Posted by 
+			
+			    任琪
+			 
+			on 
+			Tuesday, June 18, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#pcl-vtk简介">PCL、VTK简介</a></li>
+<li><a href="#ply简介">PLY简介</a></li>
+<li><a href="#ply文件结构">PLY文件结构</a></li>
+<li><a href="#pcl-vtk显示模型">PCL+VTK显示模型</a></li>
+<li><a href="#程序示例">程序示例</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h3 id="pcl-vtk简介">PCL、VTK简介</h3>
+
+<p>PCL(Point Cloud Library)是一个独立的、大型的跨平台开源C++编程库，它建立在前人对点云研究的基础之上，能够处理二维、三维图像和点云数据。PCL也实现了大量与点云相关的通用算法和高效的数据结构，涉及点云获取、滤波、分割、配准、检索、特征提取、识别、追踪、曲面重建、可视化等。支持多种操作系统平台，可在Windows、Linux、Android、Mac OS X、部分嵌入式实时系统上运行。</p>
+
+<p>VTK(Visualization Toolkit)是一个用于3D计算机图形、图像处理和可视化的开源免费软件系统。它旨在为用户提供方便性和灵活性，具有以下特点：凭借强大的3D图形功能、设备无关性、良好的可移植性和更丰富的数据类型，能够支持对多种数据类型进行处理。</p>
+
+<h3 id="ply简介">PLY简介</h3>
+
+<p>PLY文件格式是斯坦福大学开发的一套三维网格模型数据格式，全名为多边形文件格式，广泛应用在图形学领域，例如北卡罗来纳的电厂模型，斯坦福大学的三维扫描数据库，乔治亚理工学院的大型几何模型库等，最初的模型都是基于这个格式的。</p>
+
+<p>PLY多边形文件格式的开发目的是为多边形模型建立一套结构简单并且能够满足大多数图形应用需要的模型格式。它允许以ASCII码格式或二进制形式存储文件，主要用来存储立体扫描结果的三维数值，通过多边形面片的集合描述三维物体。它可以存储的模型信息包括透明度、颜色、表面法向量、材质坐标与资料可信度，并能对多边形的正反两面设定不同的属性。</p>
+
+<p>PLY作为一种多边形模型格式，和三维引擎中常用的场景图文件格式和脚本文件不同的是，每个PLY文件仅能够描述一个多边形模型对象(Object)，可以通过大量顶点和面等数据对这个三维模型对象进行描述，每一类这样的数据被称作一种元素(Element)。每个PLY文档中都包含用以设定网格模型的“元素”与“属性”的档头(header)以及在档头下方接着大量的用以表示点和面的“数值资料”。</p>
+
+<h3 id="ply文件结构">PLY文件结构</h3>
+
+<p>PLY的文件结构简单：文件头加上元素数据列表。其中文件头中以行为单位描述文件类型、格式与版本、元素类型、元素的属性等，然后根据文件头中所列出元素类型的顺序及其属性，在文件头后按顺序记录各个元素的值。</p>
+
+<p>典型的PLY文件结构： 头部、 顶点列表、 面片列表 、其他元素列表。</p>
+
+<p>头部是一系列文本行，以回车形式结束，用来描述文件的剩余部分。头部包含一个对每个元素类型的描述，以及一个与这个元素关联的不同属性的列表。头部还说明这个文件是二进制的或者是ASCII的。头部后面的是一个元素列表，按在头部中描述的顺序出现。</p>
+
+<p>PLY文件中可以存储两类点云数据，一种是单纯的点数据，另一种是带面的网格数据。如果PLY文件表头Element Face的值为0，则表示该文件为点云文件，如果Element Face的值为某一正整数n，则表示该文件为网格文件，且包含n个网格。所以利用PCL读取 PLY 文件，不能一昧用</p>
+
+<pre><code>pcl::PointCloud&lt;PointT&gt;::Ptr cloud (new pcl::PointCloud&lt;PintT&gt;)
+</code></pre>
+
+<p>来读取。因此在读取或使用PLY文件的时候，首先要查看文件头具体内容，分清该文件是点数据还是网格数据。</p>
+
+<h3 id="pcl-vtk显示模型">PCL+VTK显示模型</h3>
+
+<p>在这里，先介绍一下VTK库中部分数据结构：</p>
+
+<p>vtkPolyData：用来表示顶点、线、多边形、三角形在内的几何结构，即三维实体。</p>
+
+<p>vtkPoints：用来操作VTK中的点，可以调用SetPoint或InsertPoint来设置点的vtkIdType和三维坐标。</p>
+
+<p>vtkCellArray：用来操作cell单元，调用InsertNextCell函数逐步添加新的cell。VTK中关于点、线、面的那些信息都是存放在cellarray中，应用时也是直接对cellarray指针进行处理，数据的写入和读取在vtkCellArray类完成。</p>
+
+<p>Qt可以跟PCL和VTK等其他库联合使用，功能十分强大。我们通过PCL从计算机本地读取PLY文件并将其数据以PolygonMesh数据结构放入到mesh中，再调用PCL库中mesh2vtk函数将mesh数据转换成vtkPolyData数据结构，该数据结构是VTK库所有的数据类型。</p>
+
+<p>要想在主界面中显示三维模型，需要先定义vtkPolyDataMapper，通过SetInput输入vtkPolyData信息，再定义vtkActor，调用SetMapper导入vtkPolyDataMapper，接下来定义vtkRenderer，调用AddActor，然后在vtkRenderWindow中调用Render，再加上其他辅助的函数，就可以完整的完成输出了。</p>
+
+<p>在系统中加载三维模型，如果是点云类文件，则按照一般的点云类读取方法读取，读取方法如下：</p>
+
+<pre><code>Pcl::PointCloud&lt;pcl::PointXYZ&gt; cloud;
+Pcl::io::loadPLYFile&lt;pcl::PointXYZ&gt;(“path”,cloud);
+</code></pre>
+
+<p>加载完成后显示效果如图：</p>
+
+<p><img src="../../static/img/3Dmodel1.png" alt="1" /></p>
+
+<p>网格类文件，则读取方法如下：</p>
+
+<pre><code>Pcl::PolygonMesh mesh;
+Pcl::io::loadPolygonFilePLY(“path”,mesh);
+</code></pre>
+
+<p>加载完成后显示效果如图:</p>
+
+<p><img src="/home/renqi/web/blogweb/static/img/3Dmodel2.jpg" alt="2" /></p>
+
+<h3 id="程序示例">程序示例</h3>
+
+<pre><code>//读取.ply文件
+void MainWindow::load_ply(){
+    pcl::PolygonMesh mesh;
+    if(pcl::io::loadPolygonFilePLY(&quot;/home/ren77/ply/ZM.pr.density.ply&quot;, mesh) == -1)
+    {
+        cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
+    }
+    pcl::PointCloud&lt;pcl::PointXYZ&gt; cloud;
+    if(pcl::io::loadPLYFile&lt;pcl::PointXYZ&gt;(&quot;/home/ren77/ply/ZM.ply&quot;,cloud) == -1)
+    {
+        cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
+    }
+//        boost::shared_ptr&lt;pcl::visualization::PCLVisualizer&gt; viewer(new pcl::visualization::PCLVisualizer(&quot;3D Viewer&quot;));
+//        viewer-&gt;addPolygonMesh(mesh, &quot;mesh&quot;);
+//        while (!viewer-&gt;wasStopped())
+//        {
+//            viewer-&gt;spinOnce();
+//        }
+
+    vtkSmartPointer&lt;vtkPolyData&gt; polyData1 = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+    vtkSmartPointer&lt;vtkPolyData&gt; polyData2 = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+    vtkSmartPointer&lt;vtkPoints&gt; vtkPoint = vtkSmartPointer&lt;vtkPoints&gt;::New();
+    vtkSmartPointer&lt;vtkCellArray&gt; cells = vtkSmartPointer&lt;vtkCellArray&gt;::New();
+
+    pcl::io::mesh2vtk(mesh,polyData1);
+
+    polyData2-&gt;SetPoints(vtkPoint);
+    polyData2-&gt;SetVerts(cells);
+
+    for (size_t i=0;i&lt;cloud.points.size();++i) {
+        auto pointID = vtkPoint-&gt;InsertNextPoint(cloud.points[i].x,cloud.points[i].y,cloud.points[i].z);
+        cells-&gt;InsertNextCell(3);
+        cells-&gt;InsertCellPoint(pointID);
+    }
+
+    vtkSmartPointer&lt;vtkPolyDataMapper&gt; mapper1 = vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New();
+    mapper1-&gt;SetInputData(polyData1);
+
+    vtkSmartPointer&lt;vtkPolyDataMapper&gt; mapper2 = vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New();
+    mapper2-&gt;SetInputData(polyData2);
+
+    vtkSmartPointer&lt;vtkActor&gt; actor1 = vtkSmartPointer&lt;vtkActor&gt;::New();
+    actor1-&gt;SetMapper(mapper1);
+
+    vtkSmartPointer&lt;vtkActor&gt; actor2 = vtkSmartPointer&lt;vtkActor&gt;::New();
+    actor2-&gt;SetMapper(mapper2);
+
+    m_render-&gt;AddActor(actor1);
+    m_render-&gt;AddActor(actor2);
+    m_render-&gt;ResetCamera();
+    m_window-&gt;Render();
+}
+</code></pre>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/quickstart_hugo/" data-toggle="tooltip" data-placement="top" title="快速启动Hugo">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/anaconda/" data-toggle="tooltip" data-placement="top" title="Anaconda虚拟环境使用">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/ren-qi-qi-65/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.weibo.com/3993719314/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/img/wechat_qrcode.jpg">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/renqiqi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; RenQi 2019
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite"></a> by <a href="https://github.com/renqiqi">renqi</a> 
+                   
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

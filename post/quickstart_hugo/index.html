@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="RenQi">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://renqi.github.io/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="http://renqi.github.io/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="快速启动Hugo" />
+    <meta property="og:title" content="快速启动Hugo" />
+    <meta property="twitter:title" content="快速启动Hugo" />
+    
+
+    
+    <meta name="description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="任琪，计算机在读，棒球爱好者 | 这里是 任琪 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="任琪, renqi, RenQi, 任琪的日志, 任琪的博客, Renqi Blog, 博客, 个人网站, 互联网">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>快速启动Hugo-任琪 | RenQi</title>
+
+    <link rel="canonical" href="/post/quickstart_hugo/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">RenQi</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://img.zhaohuabing.com/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                    </div>
+                    <h1>快速启动Hugo</h1>
+                    <h2 class="subheading">Quick Start Hugo</h2>
+                    <span class="meta">
+			Posted by 
+			
+			    任琪
+			 
+			on 
+			Monday, May 13, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#quick-start">Quick Start</a>
+<ul>
+<li><a href="#step-1-install-hugo">Step 1: Install Hugo</a></li>
+<li><a href="#step-2-create-a-new-site">Step 2: Create a New Site</a></li>
+<li><a href="#step-3-add-a-theme">Step 3: Add a Theme</a></li>
+<li><a href="#step-4-add-some-content">Step 4: Add Some Content</a></li>
+<li><a href="#step-5-start-the-hugo-server">Step 5: Start the Hugo server</a></li>
+<li><a href="#step-6-customize-the-theme">Step 6: Customize the Theme</a></li>
+<li><a href="#site-configuration">Site Configuration</a></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h1 id="quick-start">Quick Start</h1>
+
+<p>Create a Hugo site using the beautiful Ananke theme.</p>
+
+<p>This quick start uses macOS in the examples. For instructions about how to install Hugo on other operating systems, see <a href="https://gohugo.io/getting-started/installing">install</a>.</p>
+
+<p>It is recommended to have <a href="https://git-scm.com/downloads">Git installed</a> to run this tutorial.</p>
+
+<h2 id="step-1-install-hugo">Step 1: Install Hugo</h2>
+
+<p>Homebrew, a package manager for macOS, can be installed from <a href="https://brew.sh/">brew.sh</a>. See <a href="https://gohugo.io/getting-started/installing">install</a> if you are running Windows etc.</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>To verify your new install:</p>
+
+<pre><code>hugo version
+</code></pre>
+
+<h2 id="step-2-create-a-new-site">Step 2: Create a New Site</h2>
+
+<pre><code>hugo new site quickstart
+</code></pre>
+
+<p>The above will create a new Hugo site in a folder named quickstart.</p>
+
+<h2 id="step-3-add-a-theme">Step 3: Add a Theme</h2>
+
+<p>See <a href="https://themes.gohugo.io/">themes.gohugo.io</a> for a list of themes to consider. This quickstart uses the beautiful <a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke theme</a>.</p>
+
+<pre><code>cd quickstart
+
+# Download the theme
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+# Note for non-git users:
+#   - If you do not have git installed, you can download the archive of the latest
+#     version of this theme from:
+#       https://github.com/budparr/gohugo-theme-ananke/archive/master.zip
+#   - Extract that .zip file to get a &quot;gohugo-theme-ananke-master&quot; directory.
+#   - Rename that directory to &quot;ananke&quot;, and move it into the &quot;themes/&quot; directory.
+# End of note for non-git users.
+
+# Edit your config.toml configuration file
+# and add the Ananke theme.
+echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+</code></pre>
+
+<h2 id="step-4-add-some-content">Step 4: Add Some Content</h2>
+
+<pre><code>hugo new posts/my-first-post.md
+</code></pre>
+
+<p>Edit the newly created content file if you want.</p>
+
+<h2 id="step-5-start-the-hugo-server">Step 5: Start the Hugo server</h2>
+
+<p>Now, start the Hugo server with <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content">drafts</a> enabled:</p>
+
+<pre><code>▶ hugo server -D
+
+                   | EN
++------------------+----+
+  Pages            | 10
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  3
+  Processed images |  0
+  Aliases          |  1
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Total in 11 ms
+Watching for changes in /Users/bep/quickstart/{content,data,layouts,static,themes}
+Watching for config changes in /Users/bep/quickstart/config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre>
+
+<p>Navigate to your new site at <a href="http://localhost:1313/">http://localhost:1313/</a>.</p>
+
+<h2 id="step-6-customize-the-theme">Step 6: Customize the Theme</h2>
+
+<p>Your new site already looks great, but you will want to tweak it a little before you release it to the public.</p>
+
+<h2 id="site-configuration">Site Configuration</h2>
+
+<p>Open up config.toml in a text editor:</p>
+
+<pre><code>baseURL = &quot;https://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+theme = &quot;ananke&quot;
+</code></pre>
+
+<p>Replace the title above with something more personal. Also, if you already have a domain ready, set the baseURL. Note that this value is not needed when running the local development server.</p>
+
+<p><strong>Tip</strong>: Make the changes to the site configuration or any other file in your site while the Hugo server is running, and you will see the changes in the browser right away, though you may need to clear your cache.</p>
+
+<p>For theme specific configuration options, see the <a href="https://github.com/budparr/gohugo-theme-ananke">theme site</a>.</p>
+
+<p>For further theme customization, see <a href="https://gohugo.io/themes/theme-components/">Customize a Theme</a>.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/install_hugo/" data-toggle="tooltip" data-placement="top" title="安装Hugo">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/pcl/" data-toggle="tooltip" data-placement="top" title="PCL&#43;VTK显示三维模型">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/ren-qi-qi-65/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.weibo.com/3993719314/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/img/wechat_qrcode.jpg">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/renqiqi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; RenQi 2019
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite"></a> by <a href="https://github.com/renqiqi">renqi</a> 
+                   
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>
